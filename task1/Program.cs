@@ -1,14 +1,18 @@
 ﻿int n = InputNum("Введите положительное число N ");
-int m = InputNum("Введите положительное число M ");
-if (n < 0 && m < 0)
+while (n < 0)
 {
     Console.WriteLine("Ввели не положительное число");
+    n = InputNum("Введите положительное число N ");
 }
-if (m %2 != 0)
+int m = InputNum("Введите положительное число M ");
+while (m < 0)
 {
-    m++;
+    Console.WriteLine("Ввели не положительное число");
+    m = InputNum("Введите положительное число M ");
 }
-if (n %2 != 0)
+if (m % 2 != 0) m++;
+
+if (n % 2 != 0)
 {
     n--;
 }
@@ -20,7 +24,7 @@ int NaturalNumber(int n, int m)
     {
         return n;
     }
-    else if (m % 2 == 0 )
+    else if (m % 2 == 0)
     {
         Console.Write($"{(m + 2)}, ");
         NaturalNumber(n, m + 2);
